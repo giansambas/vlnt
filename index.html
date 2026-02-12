@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Will You Be My Valentine?</title>
 
   <!-- clean modern font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- link to CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <div class="card" id="card">
-    <h1>Will you be my Valentine?</h1>
-    <p>
+    <h1 class="fade-slide">Will you be my Valentine?</h1>
+    <p class="fade-slide delay-1">
       I would really love to spend this day with you.
     </p>
 
-    <div class="buttons">
+    <div class="buttons fade-slide delay-2">
       <button class="yes" onclick="sayYes()">Yes</button>
       <button class="no" onclick="sayNo()">No</button>
     </div>
@@ -27,13 +27,19 @@
 
   <script>
     function sayYes() {
-      document.getElementById("card").innerHTML = `
-        <h1>Thank you.</h1>
-        <p>
-          You have no idea how happy this makes me.
-          I’m really looking forward to spending Valentine’s Day with you.
-        </p>
-      `;
+      const card = document.getElementById("card");
+      card.classList.add("fade-out");
+
+      setTimeout(() => {
+        card.innerHTML = `
+          <h1 class="fade-slide">Thank you.</h1>
+          <p class="fade-slide delay-1">
+            This genuinely means a lot to me.
+            I’m really looking forward to Valentine’s Day with you.
+          </p>
+        `;
+        card.classList.remove("fade-out");
+      }, 400);
     }
 
     function sayNo() {
