@@ -19,7 +19,6 @@ body {
   justify-content: center;
   background: linear-gradient(135deg, var(--white), var(--cream));
   font-family: 'Patrick Hand', cursive;
-  overflow: hidden;
 }
 
 .card {
