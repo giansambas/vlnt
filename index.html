@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Will You Be My Valentine?</title>
 
-  <!-- cute font -->
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <!-- clean modern font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- link to CSS -->
   <link rel="stylesheet" href="styles.css">
@@ -14,27 +14,30 @@
 
 <body>
   <div class="card" id="card">
-    <div class="heart">❤️</div>
     <h1>Will you be my Valentine?</h1>
-    <p>I can’t imagine spending this day with anyone else but you.</p>
+    <p>
+      I would really love to spend this day with you.
+    </p>
 
     <div class="buttons">
-      <button class="yes" onclick="sayYes()">Yes 💖</button>
-      <button class="no" onclick="sayNo()">No 🙈</button>
+      <button class="yes" onclick="sayYes()">Yes</button>
+      <button class="no" onclick="sayNo()">No</button>
     </div>
   </div>
 
   <script>
     function sayYes() {
       document.getElementById("card").innerHTML = `
-        <div class="heart">❤️</div>
-        <h1>YAY!!!</h1>
-        <p>You just made me the happiest person ever 💕<br>Happy Valentine’s Day!</p>
+        <h1>Thank you.</h1>
+        <p>
+          You have no idea how happy this makes me.
+          I’m really looking forward to spending Valentine’s Day with you.
+        </p>
       `;
     }
 
     function sayNo() {
-      alert("That option is not allowed 😤 try again hehe");
+      alert("Please reconsider.");
     }
   </script>
 </body>
