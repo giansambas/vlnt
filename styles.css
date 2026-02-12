@@ -1,17 +1,14 @@
 :root {
   --white: #ffffff;
-  --cream: #f6f1ec;
   --brown: #7a5230;
   --brown-light: #a57c5b;
   --red: #b22222;
 }
 
-/* reset */
 * {
   box-sizing: border-box;
 }
 
-/* page setup */
 body {
   margin: 0;
   height: 100vh;
@@ -24,19 +21,14 @@ body {
   overflow: hidden;
 }
 
-/* ===== background collage ===== */
+/* ===== FULL-SCREEN COLLAGE (NO BORDERS) ===== */
 .collage {
   position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
 
   z-index: -1;
 }
@@ -45,10 +37,11 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+
   filter: brightness(0.6) blur(2px);
 }
 
-/* ===== card ===== */
+/* ===== CARD ===== */
 .card {
   position: relative;
   z-index: 1;
@@ -60,7 +53,7 @@ body {
   text-align: center;
 
   border-radius: 20px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
 
   animation: cardFadeIn 0.8s ease;
 }
@@ -76,7 +69,6 @@ body {
   }
 }
 
-/* text */
 h1 {
   margin: 0 0 16px;
   font-size: 1.9rem;
@@ -91,7 +83,6 @@ p {
   color: var(--brown);
 }
 
-/* buttons */
 .buttons {
   display: flex;
   justify-content: center;
@@ -110,7 +101,7 @@ button {
 
 .yes {
   background-color: var(--red);
-  color: var(--white);
+  color: white;
 }
 
 .no {
@@ -124,7 +115,7 @@ button:hover {
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
-/* text animations */
+/* text animation */
 .fade-slide {
   opacity: 0;
   transform: translateY(8px);
@@ -141,13 +132,12 @@ button:hover {
   }
 }
 
-/* content transition */
 .fade-out {
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
-/* mobile layout */
+/* MOBILE: stack photos vertically */
 @media (max-width: 768px) {
   .collage {
     grid-template-columns: 1fr;
