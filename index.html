@@ -36,26 +36,35 @@
   </div>
 
   <script>
-    function sayYes() {
-      const card = document.getElementById("card");
-      card.classList.add("fade-out");
+  let noClicked = false;
 
-      setTimeout(() => {
-        card.innerHTML = `
-          <h1 class="fade-slide">yehey!</h1>
-          <p class="fade-slide delay-1">
-            im the luckiest person in the world to have you as my valentine :*
-            
-            tingin na ikaw sa cam pls
-          </p>
-        `;
-        card.classList.remove("fade-out");
-      }, 400);
-    }
+  function sayYes() {
+    const card = document.getElementById("card");
+    card.classList.add("fade-out");
 
-    function sayNo() {
+    setTimeout(() => {
+      card.innerHTML = `
+        <h1 class="fade-slide">yeyhey!</h1>
+        <p class="fade-slide delay-1">
+          im the luckiest person in the world to have you as my valentine.<br>
+          tingin na ikaw sa cam pls
+        </p>
+      `;
+      card.classList.remove("fade-out");
+    }, 400);
+  }
+
+  function sayNo() {
+    if (!noClicked) {
+      noClicked = true;
       alert("NO :P");
+
+      document.querySelector(".buttons").innerHTML = `
+        <button class="yes" onclick="sayYes()">Yes</button>
+        <button class="yes" onclick="sayYes()">Yes</button>
+      `;
     }
-  </script>
+  }
+</script>
 </body>
 </html>
